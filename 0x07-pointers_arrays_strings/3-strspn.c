@@ -3,18 +3,18 @@
 #include <string.h>
 
 /**
-* _memcpy - function fills the first n bytes of the memory area pointed to by s
+* _strspn - function fills the first n bytes of the memory area pointed to by s
 * @s: pointer of array
 * @accept: char which will change
 * Return: return the new array
 */
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j, cnt = 0;
+	unsigned int i, j, cnt = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		int b = 0;
+		unsigned int b = 0;
 
 		for (j = 0; accept[j] != '\0'; j++)
 		{
