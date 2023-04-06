@@ -15,7 +15,7 @@ int is_prime_number(int n)
 	{
 		return (0);
 	}
-	return (is_prime_helper(n, n - 1));
+	return (prime(n, n - 1));
 }
 /**
 * prime - function fills the first n bytes of the memory area
@@ -31,5 +31,5 @@ int prime(int n, int i)
 	else if (n % i == 0)
 		return (0);
 	else
-		return (is_prime_helper(n, i - 1));
+		return (prime(n, i - 1));
 }
