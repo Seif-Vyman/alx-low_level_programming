@@ -8,14 +8,13 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, cnt = 0, c = 0;
+	int cnt = 0;
 
 	char *p;
 
-	for (i = 0; i < argc; i++)
+	while (--argc)
 	{
-		++c;
-		for (p = argv[c]; *p; p++)
+		for (p = argv[argc]; *p; p++)
 		{
 			if (*p < '0' || *p > '9')
 			{
@@ -23,7 +22,7 @@ int main(int argc, char *argv[])
 				return (1);
 			}
 		}
-		cnt += atoi(argv[i]);
+		cnt += atoi(argv[argc]);
 	}
 	printf("%d\n", cnt);
 	return (0);
