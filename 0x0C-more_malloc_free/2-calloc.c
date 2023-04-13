@@ -4,10 +4,10 @@
 #include <stdlib.h>
 
 /**
-* _calloc - print a  concatenates two strings
-* @nmemb: pointer of string
-* @size: pointer of string2
-* Return: return copy for array
+* _calloc - return array with zeros by malloc
+* @nmemb: size of array
+* @size: size of data type
+* Return: return array
 */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
@@ -17,8 +17,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	x = malloc(nmemb * size);
-	if (x == NULL)
+	x = malloc(nmemb * sizeof(int));
+	if (x == 0)
 		return (NULL);
 	for (i = 0; i < nmemb; i++)
 		x[i] = 0;
