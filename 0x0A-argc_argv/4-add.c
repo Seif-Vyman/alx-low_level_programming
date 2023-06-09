@@ -12,22 +12,22 @@
 
 int main(int argc, char *argv[])
 {
-	int is_digit = 1, i;
 
-	if (argc >= 3)
+	if (argc >= 2)
 	{
-		for (i = 1; i < 3; i++)
+		int ans = 0, i;
+
+		for (i = 1; i < argc; i++)
 		{
-			if (strspn(argv[i], "0123456789") != strlen(argv[i]))
-				is_digit = 0;
+			if (atoi(argv[i]) % 1 == 0 && atoi(argv[i]) != 0)
+				ans += atoi(argv[i]);
+			else
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		if (is_digit)
-		{
-			printf("%d\n", atoi(argv[1]) + atoi(argv[2]));
-		}
-		else{
-			return (1);
-		}
+		printf("%d\n", ans);
 	}
 	else
 	{
